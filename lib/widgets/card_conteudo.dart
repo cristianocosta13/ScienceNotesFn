@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sciencenotes/domain/conteudo.dart';
-import 'package:sciencenotes/pages/disciplina_page.dart';
+import 'package:siencenotes/domain/conteudo.dart';
+import 'package:siencenotes/pages/disciplina_page.dart';
 
 class CardConteudo extends StatefulWidget {
   final Conteudo conteudo;
+
   const CardConteudo({
     Key? key,
     required this.conteudo,
@@ -18,7 +19,7 @@ class _CardConteudoState extends State<CardConteudo> {
   Widget build(BuildContext context) {
     return InkWell(
       child: Card(
-        color:  Color(0xFF9ED3EF),
+        color:  widget.conteudo.corConteudo,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
@@ -30,10 +31,10 @@ class _CardConteudoState extends State<CardConteudo> {
               Text(
                 widget.conteudo.titulo,
                 style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                  color: Colors.black,
-                  fontFamily: 'Abel-Regular'
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    color: Colors.black,
+                    fontFamily: 'Abel-Regular'
                 ),
               ),
               const SizedBox(height: 16),
@@ -63,13 +64,14 @@ class _CardConteudoState extends State<CardConteudo> {
                       ),
                       const SizedBox(height: 8.0,),
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(primary: widget.conteudo.corBotao),
                         onPressed: onPressedButton,
                         child: const Text(
                           'Ver mais',
                           style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontFamily: 'AmaticSC-Regular'
+                              fontSize: 16,
+                              color: Colors.white,
+                              fontFamily: 'AmaticSC-Regular'
                           ),
                         ),
                       ),
