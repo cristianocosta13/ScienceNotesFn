@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:sciencenotes/pages/biologia_page.dart';
+import 'package:sciencenotes/pages/fisica_page.dart';
+import 'package:sciencenotes/pages/quimica_page.dart';
 
 
 class Disciplina extends StatefulWidget {
@@ -12,6 +15,12 @@ class Disciplina extends StatefulWidget {
 }
 
 class _DisciplinaState extends State<Disciplina> {
+  List<Widget> _telas = [
+    FisicaPage(),
+    QuimicaPage(),
+    BiologiaPage(),
+  ];
+  int selectedIndex = 0;
   @override
 
   Widget build(BuildContext context) {
@@ -23,18 +32,23 @@ class _DisciplinaState extends State<Disciplina> {
         ),
         backgroundColor: const Color(0xFFA7AED3),
       ),
-      body: const Center(
-        child: Text('Página do Conteudo Específico',
-          style: TextStyle(
-              fontSize: 30
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ),
+      body: _telas[0],
+      //  const Center(
+      //   child: Text('Página do Conteudo Específico',
+      //     style: TextStyle(
+      //         fontSize: 30
+      //     ),
+      //     textAlign: TextAlign.center,
+      //   ),
+      // ),
       bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: true,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.deepPurple.shade50,
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.book_solid), label: 'Resumos',),
+            icon: Icon(CupertinoIcons.book_solid), label: 'Resumos',),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.video_camera_solid), label: 'Vídeos',),
           BottomNavigationBarItem(
