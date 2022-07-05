@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -12,6 +13,7 @@ class Disciplina extends StatefulWidget {
 
 class _DisciplinaState extends State<Disciplina> {
   @override
+  
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
@@ -28,6 +30,16 @@ class _DisciplinaState extends State<Disciplina> {
           ),
           textAlign: TextAlign.center,
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.book_solid), label: 'Resumos',),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.video_camera_solid), label: 'Vídeos',),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.pencil_ellipsis_rectangle), label: 'Questões',),
+        ],
       ),
     );
   }
