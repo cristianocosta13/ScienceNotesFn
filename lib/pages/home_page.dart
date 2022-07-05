@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sciencenotes/pages/biologia_page.dart';
-import 'package:sciencenotes/widgets/card_ciencias.dart';
-import 'package:sciencenotes/pages/fisica_page.dart';
-import 'package:sciencenotes/pages/quimica_page.dart';
+import 'package:siencenotes/pages/biologia_page.dart';
+import 'package:siencenotes/widgets/card_ciencias.dart';
+import 'package:siencenotes/pages/fisica_page.dart';
+import 'package:siencenotes/pages/quimica_page.dart';
 
 class HomePage extends StatefulWidget{
   const HomePage({Key? key}) : super(key: key);
@@ -32,20 +32,24 @@ class HomePageState extends State<HomePage> {
         child: ListView(
           children: [
             CardCiencias(
-                nomeCiencias: 'Física',
-                imagemCiencias: 'https://i.ibb.co/5Ff9kVX/1655761311860.png',
-                page_direction: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return FisicaPage();
-                      },
-                    ),
-                  );
-                },
+              corBotao: Colors.blue.shade200,
+              corCard: Colors.blue.shade100,
+              nomeCiencias: 'Física',
+              imagemCiencias: 'https://i.ibb.co/5Ff9kVX/1655761311860.png',
+              page_direction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return FisicaPage();
+                    },
+                  ),
+                );
+              },
             ),
             CardCiencias(
+              corBotao: Colors.deepPurple.shade200,
+              corCard: Colors.deepPurple.shade100,
               nomeCiencias: 'Química',
               imagemCiencias: 'https://i.ibb.co/mBhmBFy/1655761232564.png',
               page_direction: () {
@@ -60,34 +64,25 @@ class HomePageState extends State<HomePage> {
               },
             ),
             CardCiencias(
-                nomeCiencias: 'Biologia',
-                imagemCiencias: 'https://i.ibb.co/Yc1Q9dW/1655760878844.png',
-                page_direction: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return BiologiaPage();
-                      },
-                    ),
-                  );
-                },
+              corBotao: Colors.green.shade200,
+              corCard: Colors.green.shade100,
+              nomeCiencias: 'Biologia',
+              imagemCiencias: 'https://i.ibb.co/Yc1Q9dW/1655760878844.png',
+              page_direction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return BiologiaPage();
+                    },
+                  ),
+                );
+              },
             ),
           ],
         ),
       ),
     );
   }
-
-  // void pageFisica() {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(
-  //       builder: (context) {
-  //         return FisicaPage();
-  //       },
-  //     ),
-  //   );
-  // }
 
 }
