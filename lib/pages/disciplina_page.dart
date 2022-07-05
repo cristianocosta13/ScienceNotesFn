@@ -13,7 +13,7 @@ class Disciplina extends StatefulWidget {
 
 class _DisciplinaState extends State<Disciplina> {
   @override
-  
+
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
@@ -39,6 +39,8 @@ class _DisciplinaState extends State<Disciplina> {
             icon: Icon(CupertinoIcons.video_camera_solid), label: 'Vídeos',),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.pencil_ellipsis_rectangle), label: 'Questões',),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.square_pencil), label: 'Simulado',),
         ],
       ),
     );
