@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:sciencenotes/pages/fisica_page.dart';
+import 'package:siencenotes/pages/fisica_page.dart';
 
 class CardCiencias extends StatefulWidget {
   final String nomeCiencias;
   final String imagemCiencias;
+  final Color corCard;
+  final Color corBotao;
   final Function page_direction;
 
   const CardCiencias({
     Key? key,
     required this.nomeCiencias,
     required this.imagemCiencias,
+    required this.corCard,
+    required this.corBotao,
     required this.page_direction,
   }) : super(key: key);
 
@@ -22,7 +26,7 @@ class _CardCienciasState extends State<CardCiencias> {
   Widget build(BuildContext context) {
     return InkWell(
       child: Card(
-        color: const Color(0xFF9ED3EF),
+        color: widget.corCard,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
@@ -50,21 +54,21 @@ class _CardCienciasState extends State<CardCiencias> {
                         Text(
                           'Resumo',
                           style: TextStyle(
-                            fontSize: 24, fontFamily: 'Abel-Regular'
+                              fontSize: 24, fontFamily: 'Abel-Regular'
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
                           'Equações',
                           style: TextStyle(
-                            fontSize: 24, fontFamily: 'Abel-Regular'
+                              fontSize: 24, fontFamily: 'Abel-Regular'
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
                           'Aplicação',
                           style: TextStyle(
-                            fontSize: 24, fontFamily: 'Abel-Regular'
+                              fontSize: 24, fontFamily: 'Abel-Regular'
                           ),
                         ),
                       ],
@@ -80,12 +84,13 @@ class _CardCienciasState extends State<CardCiencias> {
                       ),
                       const SizedBox(height: 8.0,),
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(primary: widget.corBotao),
                         onPressed: ()=> widget.page_direction(),
-                        child: const Text(
+                        child:  Text(
                           'Visualizar',
                           style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white, fontFamily: 'AmaticSC-Regular'
+                              fontSize: 16,
+                              color: Colors.white, fontFamily: 'AmaticSC-Regular'
                           ),
                         ),
                       ),
