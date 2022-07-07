@@ -32,7 +32,7 @@ class _DisciplinaState extends State<Disciplina> {
         ),
         backgroundColor: const Color(0xFFA7AED3),
       ),
-      body: _telas[0],
+      body: _telas[selectedIndex],
       //  const Center(
       //   child: Text('Página do Conteudo Específico',
       //     style: TextStyle(
@@ -42,6 +42,8 @@ class _DisciplinaState extends State<Disciplina> {
       //   ),
       // ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex, 
+        onTap: directionPage(), 
         showUnselectedLabels: true,
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.deepPurple.shade50,
@@ -58,5 +60,11 @@ class _DisciplinaState extends State<Disciplina> {
         ],
       ),
     );
+  }
+  
+  void directionPage(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
   }
 }
